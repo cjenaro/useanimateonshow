@@ -1,3 +1,12 @@
+:root {
+  --footer-h: 70px;
+  --header-h: var(--footer-h);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +15,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+header,
+footer {
+  min-height: var(--header-h);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+footer {
+  justify-content: center;
+}
+
+main {
+  min-height: calc(100vh - calc(var(--footer-h) + var(--header-h)));
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+  align-content: center;
+  justify-items: center;
+  width: 700px;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 100vw;
+}
+
+main > div:nth-child(odd) {
+  justify-self: end;
+}
+
+main > div:nth-child(even) {
+  justify-self: start;
+}
+
+img {
+  max-width: 100%;
+}
+
+.square {
+  width: 300px;
+  height: 200px;
+  max-width: 100%;
+  border-radius: 5px;
 }
