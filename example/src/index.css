@@ -29,6 +29,7 @@ footer {
   background-color: #ffffff;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 2rem;
 }
 
@@ -36,7 +37,7 @@ footer {
   justify-content: center;
 }
 
-main {
+main > div {
   min-height: calc(100vh - calc(var(--footer-h) + var(--header-h)));
   display: grid;
   grid-template-columns: 1fr;
@@ -47,14 +48,7 @@ main {
   padding: 2rem;
   margin: 0 auto;
   max-width: 100vw;
-}
-
-main > div:nth-child(odd) {
-  justify-self: end;
-}
-
-main > div:nth-child(even) {
-  justify-self: start;
+  overflow: hidden;
 }
 
 img {
@@ -70,6 +64,7 @@ img {
 
 .show-code {
   overflow: hidden;
+  position: relative;
   justify-self: stretch !important;
 }
 
@@ -85,10 +80,35 @@ img {
   font-weight: bold;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
-h1 {
+.show-code button:last-of-type {
+  border-radius: 0 0 5px 5px;
+}
+
+.show-code textarea {
+  border: 0;
+  height: 0;
+  width: 0;
+  padding: 0;
+  position: absolute;
+  opacity: 0;
+  top: -100000px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
+  text-align: center;
+}
+
+a {
+  color: currentColor;
+  font-weight: bold;
 }
 
 pre {
@@ -96,7 +116,59 @@ pre {
   background-color: #011627;
   color: #addb67;
   padding: 1rem;
-  border-radius: 0 0 5px 5px;
-  font-weight: 2rem;
+  overflow: scroll;
   font-family: inherit;
+}
+
+.copied {
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  padding: 1.5rem;
+  color: #011627;
+  background-color: #addb67;
+  left: 50%;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 1px #00000020;
+}
+
+.copied button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+
+ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+.br {
+  border-radius: 5px;
+}
+
+.o-none {
+  overflow: hidden;
+}
+
+@media (min-width: 500px) {
+  main > div > div:nth-child(odd) {
+    justify-self: end;
+  }
+
+  main > div > div:nth-child(even) {
+    justify-self: start;
+  }
 }

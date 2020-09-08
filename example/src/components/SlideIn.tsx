@@ -7,10 +7,10 @@ const SlideIn: FunctionComponent<{ from: 'left' | 'right' }> = ({
 }) => {
   const [Wrapper, ref, props] = useAnimateOnShow(
     {
-      transform: `translateX(${1000 * (from === 'left' ? 1 : -1)}px)`
+      transform: `translateX(${100 * (from === 'left' ? 1 : -1)}vw)`
     },
     {
-      transform: `translateX(0px)`
+      transform: `translateX(0vw)`
     },
     { infinite: true, onShow: (showing: boolean) => console.log(showing) }
   )
@@ -33,10 +33,10 @@ const SlideIn: FunctionComponent<{ from: 'left' | 'right' }> = ({
 }) => {
   const [Wrapper, ref, props] = useAnimateOnShow(
     {
-      transform: \`translateX(\${1000 * (from === 'left' ? 1 : -1)}px)\`
+      transform: \`translateX(\${100 * (from === 'left' ? 1 : -1)}vw)\`
     },
     {
-      transform: \`translateX(0px)\`
+      transform: \`translateX(0vw)\`
     },
     { infinite: true, onShow: (showing: boolean) => console.log(showing) }
   )

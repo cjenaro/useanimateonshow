@@ -1,11 +1,24 @@
-import React, { useState, FunctionComponent } from 'react'
+import React, { useState, FunctionComponent, useRef } from 'react'
 import { animated, useSpring } from 'react-spring'
 
 const getRandom = (x: number) => Math.floor(Math.random() * 360 * x)
-
-const Square: FunctionComponent = ({ children }) => {
+const doNothing = () => {}
+const ShowCode: FunctionComponent<{ code: string }> = ({ code }) => {
   const [show, setShow] = useState(false)
-  const props = useSpring(!show ? { maxHeight: 0 } : { maxHeight: 500 })
+  const [copied, setCopied] = useState(false)
+  const codeRef = useRef<HTMLTextAreaElement>(null)
+  const props = useSpring(
+    !show
+      ? { maxHeight: 0, overflowY: 'hidden' }
+      : { maxHeight: 1000, overflowY: 'scroll' }
+  )
+
+  const copiedProps = useSpring(
+    !copied
+      ? { transform: 'translate(-50%, 100px)' }
+      : { transform: 'translate(-50%, -50px)' }
+  )
+
   const btnProps = useSpring(
     !show
       ? {
@@ -27,14 +40,44 @@ const Square: FunctionComponent = ({ children }) => {
           )}, 71%, 36%, 1) 68%, hsla(${getRandom(212)}, 66%, 75%, 1) 100%)`
         }
   )
+
+  const copyCode = () => {
+    if (!codeRef || !codeRef.current) return
+    codeRef.current.select()
+    codeRef.current.setSelectionRange(0, 99999)
+    document.execCommand('copy')
+    setCopied(true)
+  }
+
+  const uncopyCode = () => {
+    setCopied(false)
+  }
+
   return (
     <div className='show-code'>
       <animated.button style={btnProps} onClick={() => setShow(!show)}>
         Show code
       </animated.button>
-      <animated.div style={props}>{children}</animated.div>
+      <animated.div style={props}>
+        <pre>{code}</pre>
+        <button onClick={copyCode}>Copy code!</button>
+        <textarea
+          ref={codeRef}
+          name='code'
+          id='code'
+          onChange={doNothing}
+          value={code}
+        />
+      </animated.div>
+      <animated.div style={copiedProps} className='copied'>
+        Code copied!{' '}
+        <span role='img' aria-label='Rocket'>
+          🚀
+        </span>
+        <button onClick={uncopyCode}>&times;</button>
+      </animated.div>
     </div>
   )
 }
 
-export default Square
+export default ShowCode

@@ -42,6 +42,18 @@ function useAnimateOnShow<DS extends object>(
   const props = useSpring(visible ? to : from)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (
+      !('IntersectionObserver' in window) ||
+      !('IntersectionObserverEntry' in window) ||
+      !('isIntersecting' in window.IntersectionObserverEntry.prototype)
+    ) {
+      setVisible(true)
+      return function cleanup() {
+        console.warn('No intersection observer on window.')
+      }
+    }
+
     const handleVisible = (
       entries: IntersectionObserverEntry[],
       observer: IntersectionObserver
