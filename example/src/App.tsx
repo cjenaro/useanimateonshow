@@ -1,9 +1,28 @@
 import React from 'react'
 
 import useAnimateOnShow from '@cjenaro/useanimateonshow'
-import FlyIn from './components/FlyIn'
-import SlideIn from './components/SlideIn'
+import FlyIn, { flyInCode } from './components/FlyIn'
+import SlideIn, { slideInCode } from './components/SlideIn'
 import Square from './components/Square'
+import ShowCode from './components/ShowCode'
+
+const countCode = `import React, { FunctionComponent } from 'react'
+import useAnimateOnShow from '@cjenaro/useanimateonshow'
+
+const Count: FunctionComponent = () => {
+  const [Wrapper, ref, props] = useAnimateOnShow({ x: 0 }, { x: 100 })
+
+  return (
+    <h1>
+      <Wrapper visible={ref}>
+        {props.x.interpolate((x) => x.toFixed(2))}
+      </Wrapper>
+    </h1>
+  )
+}
+
+export default Count
+`
 
 const App = () => {
   const [Wrapper, ref, props] = useAnimateOnShow({ x: 0 }, { x: 100 })
@@ -11,22 +30,30 @@ const App = () => {
     <>
       <header>Use animate on show</header>
       <main>
-        <Wrapper visible={ref}>
-          {props.x.interpolate((x) => x.toFixed(2))}
-        </Wrapper>
+        <h1>Count</h1>
+        <ShowCode>
+          <pre>{countCode}</pre>
+        </ShowCode>
+        <h1>
+          <Wrapper visible={ref}>
+            {props.x.interpolate((x) => x.toFixed(2))}
+          </Wrapper>
+        </h1>
         <h1>Fly in</h1>
+        <ShowCode>
+          <pre>{flyInCode}</pre>
+        </ShowCode>
         {Array.from({ length: 5 }).map((_, idx) => (
           <FlyIn key={`fly-${idx}`}>
-            <img
-              height='300'
-              src={`https://picsum.photos/seed/${Math.ceil(
-                Math.random() * idx * 1000
-              )}/300`}
-              alt={`Random nr ${idx}.`}
+            <Square
+              color={`hsl(${Math.floor(Math.random() * idx * 1215)}, 93%, 27%)`}
             />
           </FlyIn>
         ))}
         <h1>Slide in</h1>
+        <ShowCode>
+          <pre>{slideInCode}</pre>
+        </ShowCode>
         {Array.from({ length: 5 }).map((_, idx) => (
           <SlideIn key={`fly-${idx}`} from={idx % 2 === 0 ? 'left' : 'right'}>
             <Square

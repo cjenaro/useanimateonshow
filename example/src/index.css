@@ -67,3 +67,36 @@ img {
   max-width: 100%;
   border-radius: 5px;
 }
+
+.show-code {
+  overflow: hidden;
+  justify-self: stretch !important;
+}
+
+.show-code button {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+}
+
+pre {
+  margin: 0;
+  background-color: #011627;
+  color: #addb67;
+  padding: 1rem;
+  border-radius: 0 0 5px 5px;
+  font-weight: 2rem;
+  font-family: inherit;
+}
