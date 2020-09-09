@@ -44,7 +44,7 @@ const Count: FunctionComponent = () => {
 Lastly, there is a third argument with some optional configuration
 
 ```tsx
-{ `{ infinite: true, onShow: (showing: boolean) => console.log(showing) }` }
+{ infinite: true, onShow: (showing: boolean) => console.log(showing) }
 ```
 
 Infinite means that once the element leaves the screen it will animate
@@ -54,7 +54,3 @@ onShow function that receives wether the element is showing or not.
 ## License
 
 MIT © [jenaro94](https://github.com/jenaro94)
-
-```
-
-```
