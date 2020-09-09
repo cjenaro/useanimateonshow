@@ -116,7 +116,8 @@ pre {
   background-color: #011627;
   color: #addb67;
   padding: 1rem;
-  overflow: scroll;
+  overflow-y: hidden;
+  max-width: 100%;
   font-family: inherit;
 }
 
@@ -157,10 +158,6 @@ ul li:last-of-type {
 
 .br {
   border-radius: 5px;
-}
-
-.o-none {
-  overflow: hidden;
 }
 
 @media (min-width: 500px) {

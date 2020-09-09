@@ -81,7 +81,7 @@ const Count: FunctionComponent = () => {
       </pre>
 
       <p>Lastly, there is a third argument with some optional configuration</p>
-      <pre>
+      <pre className="br">
         {`{ infinite: true, onShow: (showing: boolean) => console.log(showing) }`}
       </pre>
       <p>
