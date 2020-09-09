@@ -4,25 +4,19 @@
 
 [![NPM](https://img.shields.io/npm/v/@cjenaro/useanimateonshow.svg)](https://www.npmjs.com/package/@cjenaro/useanimateonshow) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
-
-```bash
-npm install --save @cjenaro/useanimateonshow
-```
-
 # How to use the library
 
 ## Notes
 
 - The library uses [React Spring](https://www.react-spring.io/) if you don't know how to use it refer to their [docs](https://www.react-spring.io/docs)
 
-- The library uses the [Intersection Observer API](https://developer.mozilla.org/es/docs/Web/API/Intersection_Observer_API) to get when the element is showing on screen, if you want/need IE 11 support, you will need a{ [polyfill](https://github.com/w3c/IntersectionObserver)
+- The library uses the [Intersection Observer API](https://developer.mozilla.org/es/docs/Web/API/Intersection_Observer_API) to get when the element is showing on screen, if you want/need IE 11 support, you will need a [polyfill](https://github.com/w3c/IntersectionObserver)
 
 ## Installation
 
 ```bash
-npm install @cjenaro/useanimateonshow
-yarn add @cjenaro/useanimateonshow
+npm install @cjenaro/useanimateonshow react-spring
+yarn add @cjenaro/useanimateonshow react-spring
 ```
 
 ## Usage
@@ -50,9 +44,7 @@ const Count: FunctionComponent = () => {
 Lastly, there is a third argument with some optional configuration
 
 ```tsx
-{
-  ;`{ infinite: true, onShow: (showing: boolean) => console.log(showing) }`
-}
+{ `{ infinite: true, onShow: (showing: boolean) => console.log(showing) }` }
 ```
 
 Infinite means that once the element leaves the screen it will animate
