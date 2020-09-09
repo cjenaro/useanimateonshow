@@ -1,9 +1,8 @@
-import React from 'react'
-import { Router, Link } from '@reach/router'
-import Home from './routes/Home'
-import Docs from './routes/Docs'
+import React, { FunctionComponent } from 'react'
+import { Link } from 'gatsby'
+import '../index.css'
 
-const App = () => (
+const App: FunctionComponent = ({ children }) => (
   <>
     <header>
       <Link to='/'>
@@ -11,12 +10,7 @@ const App = () => (
       </Link>
       <Link to='/docs'>Docs</Link>
     </header>
-    <main>
-      <Router>
-        <Home path='/' />
-        <Docs path='/docs' />
-      </Router>
-    </main>
+    <main>{children}</main>
     <footer>
       <a
         href='http://github.com/jenaro94/useanimateonshow'

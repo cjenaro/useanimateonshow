@@ -5,11 +5,11 @@ import SlideIn, { slideInCode } from '../components/SlideIn'
 import Square from '../components/Square'
 import ShowCode from '../components/ShowCode'
 import Count, { countCode } from '../components/Count'
-import { RouteComponentProps } from '@reach/router'
+import Layout from '../components/Layout'
 
-const Home: FunctionComponent<RouteComponentProps> = () => {
+const Home: FunctionComponent = () => {
   return (
-    <>
+    <Layout>
       <h1>Count</h1>
       <Count />
       <ShowCode code={countCode} />
@@ -31,7 +31,7 @@ const Home: FunctionComponent<RouteComponentProps> = () => {
         </SlideIn>
       ))}
       <ShowCode code={slideInCode} />
-    </>
+    </Layout>
   )
 }
 

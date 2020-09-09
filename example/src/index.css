@@ -37,7 +37,7 @@ footer {
   justify-content: center;
 }
 
-main > div {
+main {
   min-height: calc(100vh - calc(var(--footer-h) + var(--header-h)));
   display: grid;
   grid-template-columns: 1fr;
@@ -161,11 +161,11 @@ ul li:last-of-type {
 }
 
 @media (min-width: 500px) {
-  main > div > div:nth-child(odd) {
+  main > div:nth-child(odd) {
     justify-self: end;
   }
 
-  main > div > div:nth-child(even) {
+  main > div:nth-child(even) {
     justify-self: start;
   }
 }

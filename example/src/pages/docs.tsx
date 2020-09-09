@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { RouteComponentProps } from '@reach/router'
+import Layout from '../components/Layout'
 
-const Docs: FunctionComponent<RouteComponentProps> = () => {
+const Docs: FunctionComponent = () => {
   return (
-    <>
+    <Layout>
       <h1>How to use the library</h1>
 
       <h2>Notes</h2>
@@ -81,7 +81,7 @@ const Count: FunctionComponent = () => {
       </pre>
 
       <p>Lastly, there is a third argument with some optional configuration</p>
-      <pre className="br">
+      <pre className='br'>
         {`{ infinite: true, onShow: (showing: boolean) => console.log(showing) }`}
       </pre>
       <p>
@@ -89,7 +89,7 @@ const Count: FunctionComponent = () => {
         out and then back in when it is shown again, there is also an optional
         onShow function that receives wether the element is showing or not.
       </p>
-    </>
+    </Layout>
   )
 }
 
