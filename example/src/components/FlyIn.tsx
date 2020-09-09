@@ -4,7 +4,8 @@ import useAnimateOnShow from '@cjenaro/useanimateonshow'
 const FlyIn: FunctionComponent = ({ children }) => {
   const [Wrapper, ref, props] = useAnimateOnShow(
     { transform: `translateY(50px) scale(0.5)`, opacity: 0 },
-    { transform: `translateY(0px) scale(1)`, opacity: 1 }
+    { transform: `translateY(0px) scale(1)`, opacity: 1 },
+    { threshold: 0.1 }
   )
 
   return (

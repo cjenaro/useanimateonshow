@@ -13,4 +13,7 @@ export type WrapperProps = {
 export type AnimateOnShowConfig = {
   infinite?: boolean
   onShow?: (showing: boolean) => void
+  threshold?: number
+  root: HTMLElement | null
+  rootMargin: string
 }

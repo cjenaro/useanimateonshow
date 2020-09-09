@@ -77,9 +77,9 @@ function useAnimateOnShow<DS extends object>(
     }
 
     const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1.0
+      root: config?.root || null,
+      rootMargin: config?.rootMargin || '0px',
+      threshold: config?.threshold || 1.0
     }
 
     const observer = new IntersectionObserver(handleVisible, options)
@@ -89,7 +89,7 @@ function useAnimateOnShow<DS extends object>(
     }
 
     return function cleanup() {}
-  }, [ref, config?.infinite])
+  }, [ref, config])
 
   return [wrapper, ref, props]
 }
