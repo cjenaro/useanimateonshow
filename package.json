@@ -1,6 +1,6 @@
 {
   "name": "@cjenaro/useanimateonshow",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Animate react components as they appear on the viewport with react-spring",
   "author": "jenaro94",
   "license": "MIT",
