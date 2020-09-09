@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.f77f07a37ae4aead0edd.css">:root{--footer-h:70px;--header-h:var(--footer-h)}*{box-sizing:border-box}body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#f7f7f7}code{font-family:source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace}footer,header{min-height:var(--header-h);background-color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}footer{justify-content:center}main{min-height:calc(100vh - var(--footer-h) - var(--header-h));display:grid;grid-template-columns:1fr;row-gap:3rem;align-content:center;justify-items:center;width:700px;padding:2rem;margin:0 auto;max-width:100vw;overflow:hidden}.square,img{max-width:100%}.square{width:300px;height:200px;border-radius:5px}.show-code{overflow:hidden;position:relative;justify-self:stretch!important}.show-code button{display:block;text-align:center;padding:1rem;border-radius:5px;background-color:transparent;font-size:1rem;border:1px solid #ccc;width:100%;font-weight:700;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}.show-code button:last-of-type{border-radius:0 0 5px 5px}.show-code textarea{border:0;height:0;width:0;padding:0;position:absolute;opacity:0;top:-100000px}h1,h2,h3,h4,h5{margin:0;text-align:center}a{color:currentColor;font-weight:700}pre{margin:0;background-color:#011627;color:#addb67;padding:1rem;overflow-y:hidden;max-width:100%;font-family:inherit}.copied{position:absolute;bottom:0;width:60%;padding:1.5rem;color:#011627;background-color:#addb67;left:50%;font-weight:700;text-align:center;border-radius:10px;box-shadow:0 5px 10px 1px rgba(0,0,0,.13)}.copied button{position:absolute;top:10px;right:10px;height:25px;width:25px}ul{padding-left:1rem;margin:0}ul li{margin-bottom:1rem}ul li:last-of-type{margin-bottom:0}.br{border-radius:5px}@media (min-width:500px){main>div:nth-child(odd){justify-self:end}main>div:nth-child(2n){justify-self:start}}</style><meta name="generator" content="Gatsby 2.24.55"/><link as="script" rel="preload" href="/webpack-runtime-0f75ee8c680ff082df01.js"/><link as="script" rel="preload" href="/framework-8ff4a383e44f07efc134.js"/><link as="script" rel="preload" href="/app-5628a7dbf5c364897a96.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-pages-index-tsx-49e8d70c1e18bdb9fd31.js"/><link as="fetch" rel="preload" href="/page-data/index/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header><a aria-current="page" class="" href="/"><h3>Use animate on show</h3></a><a href="/docs">Docs</a></header><main><h1>Count</h1><h1><div><div>0.00</div></div></h1><div class="show-code"><button style="border-radius:5px 5px 5px 5px;color:rgba(0, 0, 0, 1);background-image:linear-gradient(0deg, rgba(238, 175, 202, 0) 0%, rgba(232, 171, 48, 0) 30%, rgba(122, 71, 174, 0) 45%, rgba(27, 44, 157, 0) 68%, rgba(149, 188, 233, 0) 100%)">Show code</button><div style="max-height:0;overflow-y:hidden"><pre>import React, { FunctionComponent } from &#x27;react&#x27;
+import useAnimateOnShow from &#x27;@cjenaro/useanimateonshow&#x27;
+
+const Count: FunctionComponent = () =&gt; {
+  const [Wrapper, ref, props] = useAnimateOnShow({ x: 0 }, { x: 100 })
+
+  return (
+    &lt;h1&gt;
+      &lt;Wrapper visible={ref}&gt;
+        {props.x.interpolate((x) =&gt; x.toFixed(2))}
+      &lt;/Wrapper&gt;
+    &lt;/h1&gt;
+  )
+}
+
+export default Count
+</pre><button>Copy code!</button><textarea name="code" id="code">import React, { FunctionComponent } from &#x27;react&#x27;
+import useAnimateOnShow from &#x27;@cjenaro/useanimateonshow&#x27;
+
+const Count: FunctionComponent = () =&gt; {
+  const [Wrapper, ref, props] = useAnimateOnShow({ x: 0 }, { x: 100 })
+
+  return (
+    &lt;h1&gt;
+      &lt;Wrapper visible={ref}&gt;
+        {props.x.interpolate((x) =&gt; x.toFixed(2))}
+      &lt;/Wrapper&gt;
+    &lt;/h1&gt;
+  )
+}
+
+export default Count
+</textarea></div><div style="transform:translate(-50%, 100px)" class="copied">Code copied!<!-- --> <span role="img" aria-label="Rocket">🚀</span><button>×</button></div></div><h1>Fly in</h1><div><div style="transform:translateY(50px) scale(0.5);opacity:0"><div class="square" style="background-color:hsl(0, 93%, 27%)"></div></div></div><div><div style="transform:translateY(50px) scale(0.5);opacity:0"><div class="square" style="background-color:hsl(1080, 93%, 27%)"></div></div></div><div><div style="transform:translateY(50px) scale(0.5);opacity:0"><div class="square" style="background-color:hsl(1354, 93%, 27%)"></div></div></div><div><div style="transform:translateY(50px) scale(0.5);opacity:0"><div class="square" style="background-color:hsl(2542, 93%, 27%)"></div></div></div><div><div style="transform:translateY(50px) scale(0.5);opacity:0"><div class="square" style="background-color:hsl(2726, 93%, 27%)"></div></div></div><div class="show-code"><button style="border-radius:5px 5px 5px 5px;color:rgba(0, 0, 0, 1);background-image:linear-gradient(0deg, rgba(238, 175, 202, 0) 0%, rgba(232, 171, 48, 0) 30%, rgba(122, 71, 174, 0) 45%, rgba(27, 44, 157, 0) 68%, rgba(149, 188, 233, 0) 100%)">Show code</button><div style="max-height:0;overflow-y:hidden"><pre>import React, { FunctionComponent } from &#x27;react&#x27;
+import useAnimateOnShow from &#x27;@cjenaro/useanimateonshow&#x27;
+
+const FlyIn: FunctionComponent = ({ children }) =&gt; {
+  const [Wrapper, ref, props] = useAnimateOnShow(
+    { transform: &#x27;translateY(50px) scale(0.5)&#x27;, opacity: 0 },
+    { transform: &#x27;translateY(0px) scale(1)&#x27;, opacity: 1 }
+  )
+
+  return (
+    &lt;Wrapper visible={ref} style={props}&gt;
+      {children}
+    &lt;/Wrapper&gt;
+  )
+}
+
+export default FlyIn
+</pre><button>Copy code!</button><textarea name="code" id="code">import React, { FunctionComponent } from &#x27;react&#x27;
+import useAnimateOnShow from &#x27;@cjenaro/useanimateonshow&#x27;
+
+const FlyIn: FunctionComponent = ({ children }) =&gt; {
+  const [Wrapper, ref, props] = useAnimateOnShow(
+    { transform: &#x27;translateY(50px) scale(0.5)&#x27;, opacity: 0 },
+    { transform: &#x27;translateY(0px) scale(1)&#x27;, opacity: 1 }
+  )
+
+  return (
+    &lt;Wrapper visible={ref} style={props}&gt;
+      {children}
+    &lt;/Wrapper&gt;
+  )
+}
+
+export default FlyIn
+</textarea></div><div style="transform:translate(-50%, 100px)" class="copied">Code copied!<!-- --> <span role="img" aria-label="Rocket">🚀</span><button>×</button></div></div><h1>Slide in</h1><div><div style="transform:translateX(100vw)"><div class="square" style="background-color:hsl(0, 93%, 27%)"></div></div></div><div><div style="transform:translateX(-100vw)"><div class="square" style="background-color:hsl(599, 93%, 27%)"></div></div></div><div><div style="transform:translateX(100vw)"><div class="square" style="background-color:hsl(1394, 93%, 27%)"></div></div></div><div><div style="transform:translateX(-100vw)"><div class="square" style="background-color:hsl(1211, 93%, 27%)"></div></div></div><div><div style="transform:translateX(100vw)"><div class="square" style="background-color:hsl(3706, 93%, 27%)"></div></div></div><div class="show-code"><button style="border-radius:5px 5px 5px 5px;color:rgba(0, 0, 0, 1);background-image:linear-gradient(0deg, rgba(238, 175, 202, 0) 0%, rgba(232, 171, 48, 0) 30%, rgba(122, 71, 174, 0) 45%, rgba(27, 44, 157, 0) 68%, rgba(149, 188, 233, 0) 100%)">Show code</button><div style="max-height:0;overflow-y:hidden"><pre>import React, { FunctionComponent } from &#x27;react&#x27;
+import useAnimateOnShow from &#x27;@cjenaro/useanimateonshow&#x27;
+
+const SlideIn: FunctionComponent&lt;{ from: &#x27;left&#x27; | &#x27;right&#x27; }&gt; = ({
+  from,
+  children
+}) =&gt; {
+  const [Wrapper, ref, props] = useAnimateOnShow(
+    {
+      transform: `translateX(${100 * (from === &#x27;left&#x27; ? 1 : -1)}vw)`
+    },
+    {
+      transform: `translateX(0vw)`
+    },
+    { infinite: true, onShow: (showing: boolean) =&gt; console.log(showing) }
+  )
+
+  return (
+    &lt;Wrapper visible={ref} style={props}&gt;
+      {children}
+    &lt;/Wrapper&gt;
+  )
+}
+
+export default SlideIn
+
+</pre><button>Copy code!</button><textarea name="code" id="code">import React, { FunctionComponent } from &#x27;react&#x27;
+import useAnimateOnShow from &#x27;@cjenaro/useanimateonshow&#x27;
+
+const SlideIn: FunctionComponent&lt;{ from: &#x27;left&#x27; | &#x27;right&#x27; }&gt; = ({
+  from,
+  children
+}) =&gt; {
+  const [Wrapper, ref, props] = useAnimateOnShow(
+    {
+      transform: `translateX(${100 * (from === &#x27;left&#x27; ? 1 : -1)}vw)`
+    },
+    {
+      transform: `translateX(0vw)`
+    },
+    { infinite: true, onShow: (showing: boolean) =&gt; console.log(showing) }
+  )
+
+  return (
+    &lt;Wrapper visible={ref} style={props}&gt;
+      {children}
+    &lt;/Wrapper&gt;
+  )
+}
+
+export default SlideIn
+
+</textarea></div><div style="transform:translate(-50%, 100px)" class="copied">Code copied!<!-- --> <span role="img" aria-label="Rocket">🚀</span><button>×</button></div></div></main><footer><a href="http://github.com/jenaro94/useanimateonshow" target="_blank" rel="noopener noreferrer">Github</a></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-53b40ccd74644f7da133.js"],"app":["/app-5628a7dbf5c364897a96.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-00085f79e8bf156f4daf.js"],"component---src-pages-docs-tsx":["/component---src-pages-docs-tsx-1dc601334caca8df640d.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-49e8d70c1e18bdb9fd31.js"]};/*]]>*/</script><script src="/polyfill-53b40ccd74644f7da133.js" nomodule=""></script><script src="/component---src-pages-index-tsx-49e8d70c1e18bdb9fd31.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-5628a7dbf5c364897a96.js" async=""></script><script src="/framework-8ff4a383e44f07efc134.js" async=""></script><script src="/webpack-runtime-0f75ee8c680ff082df01.js" async=""></script></body></html>
